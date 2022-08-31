@@ -5,3 +5,20 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.btn1 {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 170%;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn1:hover {
+    background: white;
+    border: 1px solid;
+    color: black;
+}
