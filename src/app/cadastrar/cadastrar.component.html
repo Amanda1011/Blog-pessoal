@@ -12,18 +12,18 @@
 
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome">
+                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome" [(ngModel)]='user.nome'>
 
                     </div>
 
                     <div class="form-group">
                         <label for="usuario">Usuário</label>
-                        <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu usuário">
+                        <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" [(ngModel)]='user.usuario'>
                     </div>
 
                     <div class="form-group">
                         <label for="foto">Link da foto</label>
-                        <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
+                        <input class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto" [(ngModel)]='user.foto'>
                     </div>
 
                     <div class="form-group">
@@ -33,7 +33,7 @@
 
                     <div class="form-group ">
                         <label for="confirmeSenha ">Confirmar sua senha</label>
-                        <input [(ngModel)]='user.senha' class="form-control " type="password" name="senha " id="confirmeSenha " placeholder="Confirme sua senha ">
+                        <input class="form-control " type="password" name="senha " id="confirmeSenha" placeholder="Confirme sua senha" [(ngModel)]='user.senha'>
                     </div>
 
                     <div class="form-group ">
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center ">
-                        <button type="submit " class="btn-cancelar btn-danger mr-4" routerLink='/entrar '>Cancelar</button>
+                        <button type="submit " class="btn-cancelar btn-danger mr-4" routerLink='/entrar'>Cancelar</button>
                         <button type="submit" class="btn-cadastrar btn-success ml-4" (click)='cadastrar()'>Cadastrar</button>
                     </div>
 
