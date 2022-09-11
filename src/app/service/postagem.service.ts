@@ -23,6 +23,7 @@ export class PostagemService {
     }
 
     postPostagem(postagem: Postagem): Observable<Postagem>{
+      console.log(this.token.headers)
       return this.http.post<Postagem>(`${this.baseUrl}/postagens`, postagem, this.token)
     }
 }

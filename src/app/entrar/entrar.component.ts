@@ -24,6 +24,7 @@ export class EntrarComponent implements OnInit {
 
   entrar(){
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
+      console.log(resp)
       
       this.userLogin = resp
       
@@ -31,6 +32,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.userLogin.nome
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
+      console.log(environment)
 
       this.router.navigate(['/inicio'])
     }, erro =>{

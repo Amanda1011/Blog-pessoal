@@ -16,10 +16,12 @@ export class TemaService {
   ) { }
 
   token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
+     headers: new HttpHeaders().set('Authorization', environment.token)
+    
   }
 
   getAllTema(): Observable<Tema[]>{
+    console.log(this.token.headers)
     return this.http.get<Tema[]>('http://localhost:8080/tema', this.token)
   }
 
