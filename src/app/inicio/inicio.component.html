@@ -31,7 +31,7 @@
 
     <nav>
         <div class="nav nav-tabs d-flex justify-content-center font-weight-bold" id="nav-tab" role="tablist">
-            <a class="nav-link active text-dark" id="nav-home-tab" data-toggle="tab" href="#todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">
+            <a class="nav-link active text-dark" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" type="button" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">
                 Todas as postagens</a>
 
             <a (click)='findByIdUser()' class="nav-link text-dark font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#minhasPostagens" type="button" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas postagens</a>
@@ -126,7 +126,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>: </label>
+                    <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a></label>
                     <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
                         <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
                     </select>
@@ -136,7 +136,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()'>Publicar</button>
             </div>
         </div>
     </div>
