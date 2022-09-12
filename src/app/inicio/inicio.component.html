@@ -72,6 +72,9 @@
                             <p class="card-text mt-3">{{item.texto}}</p>
                             <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
 
+                            <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+                            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+
                         </div>
                     </div>
                 </div>
@@ -95,14 +98,11 @@
                 </div>
             </div>
 
-
-
-
         </div>
     </div>
 </div>
 
-
+<!-- Modal -->
 <div class="modal fade" id="novaPostagens" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -112,6 +112,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
             </div>
+
             <div class="modal-body">
 
                 <div class="form-group">
@@ -130,7 +131,9 @@
                         <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
                     </select>
                 </div>
+
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-success" (click)='publicar()' data-dismiss="modal">Publicar</button>
