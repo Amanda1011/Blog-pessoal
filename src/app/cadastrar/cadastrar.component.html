@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
     <div class="row">
 
         <div class="col-md-6" id="img-bg"></div>
@@ -13,7 +14,6 @@
                     <div class="form-group">
                         <label for="nome">Nome</label>
                         <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite seu nome" [(ngModel)]='user.nome'>
-
                     </div>
 
                     <div class="form-group">
@@ -32,15 +32,15 @@
                     </div>
 
                     <div class="form-group ">
-                        <label for="confirmeSenha ">Confirmar sua senha</label>
-                        <input class="form-control " type="password" name="senha " id="confirmeSenha" placeholder="Confirme sua senha" [(ngModel)]='user.senha'>
+                        <label for="confirmeSenha">Confirmar senha</label>
+                        <input class="form-control" type="password" name="senha" id="confirmeSenha" placeholder="Confirme sua senha" [(ngModel)]='user.senha'>
                     </div>
 
                     <div class="form-group ">
                         <label for="tipo ">Tipo de Usuário</label>
                         <select class="form-control " name="tipo " id="tipo" (change)='tipoUser($event)'>
                             <option>Selecione um tipo:</option>
-                            <option value="user ">Usuário</option>
+                            <option value="user">Usuário</option>
                             <option value="adm ">Administrador</option>
                         </select>
                     </div>
