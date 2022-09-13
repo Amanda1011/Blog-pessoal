@@ -47,7 +47,7 @@
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
 
             <div class="card-columns">
-                <div class="card text-center" *ngFor='let item of listaPostagens'>
+                <div class="card text-center" *ngFor='let item of listaPostagens | orderBy : key reverse'>
                     <div class="card-body">
                         <h5 class="card-title m-0">{{item.titulo}}</h5>
                         <small class="text-muted">Tema: {{item.tema.descricao}}</small>
@@ -58,22 +58,21 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
             <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
 
                 <div class="card-columns">
-                    <div class="card text-center" *ngFor='let item of user.postagem'>
+                    <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key reverse'>
                         <div class="card-body">
                             <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <small class="text-muted">Tema: {{item.tema.descricao}}</small>
                             <p class="card-text mt-3">{{item.texto}}</p>
-                            <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+                            <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy '}} às {{item.data | date: 'HH:mm '}}</small></p>
 
-                            <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
-                            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+                            <a [routerLink]="['/postagem-edit ', item.id]" class="text-info mr-3" href="">Editar</a>
+                            <a [routerLink]="['/postagem-delete ', item.id]" class="text-danger" href="">Apagar</a>
 
                         </div>
                     </div>
@@ -85,12 +84,12 @@
 
         <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema-tab">
 
-            <div class="card-columns" *ngFor='let tema of listaTemas'>
-                <div class="card text-center" *ngFor='let item of tema.postagem'>
+            <div class="card-columns" *ngFor='let tema of listaTemas '>
+                <div class="card text-center" *ngFor='let item of tema.postagem | orderBy : key reverse'>
                     <div class="card-body">
                         <h5 class="card-title m-0">{{item.titulo}}</h5>
                         <p class="card-text mt-3">{{item.texto}}</p>
-                        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy '}} às {{item.data | date: 'HH:mm '}}</small></p>
 
                         <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
 
@@ -117,18 +116,18 @@
 
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o título">
+                    <input [(ngModel)]='postagem.titulo ' type="text" class="form-control" id="titulo" placeholder="Digite o título">
                 </div>
 
                 <div class="form-group">
                     <label for="texto">Texto</label>
-                    <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3" placeholder="Digite o seu texto"></textarea>
+                    <textarea [(ngModel)]='postagem.texto ' class="form-control" name="texto" id="texto" rows="3" placeholder="Digite o seu texto"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a></label>
-                    <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                        <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
+                    <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema '>cadastre um novo</a></label>
+                    <select class="form-control" name="tema" id="tema" [(ngModel)]='idTema ' (change)='findByIdTema() '>
+                        <option *ngFor='let item of listaTemas ' value="{{item.id}}">{{item.descricao}}</option>
                     </select>
                 </div>
 
@@ -136,7 +135,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()'>Publicar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar() '>Publicar</button>
             </div>
         </div>
     </div>
