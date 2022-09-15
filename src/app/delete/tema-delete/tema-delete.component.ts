@@ -39,7 +39,7 @@ export class TemaDeleteComponent implements OnInit {
 
   apagar(){
     this.temaService.deleteTema(this.idTema).subscribe(() =>{
-      this.alertas.showAlertInfo('Tema apagado com sucesso')
+      this.alertas.showAlertSuccess('Tema apagado com sucesso')
       this.router.navigate(['/tema'])
     })
 
