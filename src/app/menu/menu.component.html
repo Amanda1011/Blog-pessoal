@@ -12,7 +12,7 @@
                 <p class="m-0 font-weight text-white fs-16">Olá, {{nome}}</p>
             </li>
 
-            <li class="nav-item pl-3">
+            <li *ngIf='auth.adm()' class="nav-item pl-3">
                 <a [routerLink]="['/user-edit', id]">
                     <p class="m-0 text-white fs-16"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
                 </a>
