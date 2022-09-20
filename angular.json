@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/blog-pessoal-amanda",
+                        "outputPath": "dist/blog-pessoal",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -36,13 +36,13 @@
                         "production": {
                             "budgets": [{
                                     "type": "initial",
-                                    "maximumWarning": "5mb",
-                                    "maximumError": "10mb"
+                                    "maximumWarning": "5kb",
+                                    "maximumError": "10kb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2mb",
-                                    "maximumError": "4mb"
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
                                 }
                             ],
                             "fileReplacements": [{
