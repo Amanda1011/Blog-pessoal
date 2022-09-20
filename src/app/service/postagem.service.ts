@@ -18,27 +18,27 @@ export class PostagemService {
     }
 
     getAllPostagens(): Observable<Postagem[]>{
-      return this.http.get<Postagem[]>('https://mands-blog.netlify.app/postagens', this.token)
+      return this.http.get<Postagem[]>('https://mands-blog.netlify.app/#/postagens', this.token)
     }
 
     getByIdPostagem(id: number): Observable<Postagem> {
-      return this.http.get<Postagem>(`https://mands-blog.netlify.app/postagens/${id}`, this.token)
+      return this.http.get<Postagem>(`https://mands-blog.netlify.app/#/postagens/${id}`, this.token)
     }
 
     getByTituloPostagem(titulo: string): Observable<Postagem[]>{
-      return this.http.get<Postagem[]>(`https://mands-blog.netlify.app/postagens/titulo/${titulo}`, this.token)
+      return this.http.get<Postagem[]>(`https://mands-blog.netlify.app/#/postagens/titulo/${titulo}`, this.token)
     }
 
     postPostagem(postagem: Postagem): Observable<Postagem>{
       console.log(this.token.headers)
-      return this.http.post<Postagem>('https://mands-blog.netlify.app/postagens', postagem, this.token)
+      return this.http.post<Postagem>('https://mands-blog.netlify.app/#/postagens', postagem, this.token)
     }
 
     putPostagem(postagem: Postagem): Observable<Postagem> {
-      return this.http.put<Postagem>('https://mands-blog.netlify.app/postagens', postagem, this.token)
+      return this.http.put<Postagem>('https://mands-blog.netlify.app/#/postagens', postagem, this.token)
     }
 
     deletePostagem(id: number) {
-      return this.http.delete(`https://mands-blog.netlify.app/postagens/${id}`, this.token)
+      return this.http.delete(`https://mands-blog.netlify.app/#/postagens/${id}`, this.token)
     }
 }
