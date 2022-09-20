@@ -30,6 +30,7 @@ export class UserEditComponent implements OnInit {
     window.scroll(0,0)
 
     if(environment.token == ''){
+      console.log('aqui')
       this.router.navigate(['/entrar'])
     }
 
@@ -61,6 +62,7 @@ export class UserEditComponent implements OnInit {
       environment.nome = ''
       environment.foto= ''
       environment.id= 0
+      
       this.router.navigate(['/entrar'])
     })
   }
